@@ -1,5 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using TodoListAPI.Data;
+using TodoListAPI.Repositories.Interfaces;
+using TodoListAPI.Repositories.Implementations;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +13,9 @@ builder.Services.AddControllers();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddScoped<ITodoRepository, TodoRepository>();
+builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
+
 
 var app = builder.Build();
 
