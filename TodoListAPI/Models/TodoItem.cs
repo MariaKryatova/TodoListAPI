@@ -13,7 +13,7 @@ namespace TodoListAPI.Models
         [MaxLength(200)]
         public string Title { get; set; }
 
-        public string Description { get; set; }
+        public string Description { get; set; } = string.Empty;
 
         public bool IsCompleted { get; set; } = false;
 
@@ -24,6 +24,6 @@ namespace TodoListAPI.Models
         public int? CategoryId { get; set; }
 
         [ForeignKey("CategoryId")]
-        public virtual Category Category { get; set; }
+        public virtual Category? Category { get; set; }
     }
 }

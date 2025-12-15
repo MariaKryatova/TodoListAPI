@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace TodoListAPI.Models
 {
@@ -11,6 +10,7 @@ namespace TodoListAPI.Models
         [Required]
         [MaxLength(100)]
         public string Name { get; set; }
-        public virtual ICollection<TodoItem> TodoItems { get; set; }
+
+        public virtual ICollection<TodoItem> TodoItems { get; set; } = new List<TodoItem>();
     }
 }
