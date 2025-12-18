@@ -9,7 +9,7 @@ namespace TodoListAPI.Models
 
         [Required]
         [MaxLength(100)]
-        public string Name { get; set; }
+        public string Name { get; set; } = string.Empty; // Инициализация по умолчанию
 
         public virtual ICollection<TodoItem> TodoItems { get; set; } = new List<TodoItem>();
     }

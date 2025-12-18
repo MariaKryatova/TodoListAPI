@@ -1,5 +1,4 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace TodoListAPI.Models
@@ -11,7 +10,7 @@ namespace TodoListAPI.Models
 
         [Required]
         [MaxLength(200)]
-        public string Title { get; set; }
+        public string Title { get; set; } = string.Empty; // Инициализация по умолчанию
 
         public string Description { get; set; } = string.Empty;
 
